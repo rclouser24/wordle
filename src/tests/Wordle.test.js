@@ -1,4 +1,4 @@
-const { Wordle, GREEN, YELLOW, BLACK } = require("./wordle.js");
+const { Wordle, GREEN, YELLOW, BLACK } = require("../classes/Wordle");
 
 describe("Wordle", () => {
   it("if guess has a diffirent number of letters than wordle, it should retun empty array", () => {
