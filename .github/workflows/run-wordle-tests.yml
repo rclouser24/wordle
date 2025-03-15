@@ -2,17 +2,14 @@ name: Run Wordle Tests
 
 on: 
   push:
-    branches: [main]  # Adjust if you want to run on other branches too
-  pull_request:
-    branches: [main]
-
+    branches: ['**'] 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4  # Clones the repo
+        uses: actions/checkout@v4  
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
