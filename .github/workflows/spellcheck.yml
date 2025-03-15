@@ -1,21 +1,20 @@
 name: spellcheck
-on:
-  pull_request:
-    branches: [main]
+on: push
 jobs:
   misspell:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code.
-        uses: actions/checout@v4
+      - name: Check out code
+        uses: actions/checkout@v4  # Fixed typo
+
       - name: Run Misspell
         uses: reviewdog/action-misspell@v1
         with:
-          gihub_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.github_token }}  # Fixed typo
           level: info
-          locate: "US"
+          locale: "US"  # "locale" instead of "locate"
           exclude: |
             ./.github/*
           filter_mode: "added"
           reporter: github-pr-review
-          faiil_on_error: false
+          fail_on_error: false  # Fixed typo
