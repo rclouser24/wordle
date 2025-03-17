@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GuessInput = ({ currentGuess, setCurrentGuess, handleSubmit }) => {
-  // Handle input changes: limit to 5 characters and convert to uppercase
+
   const handleChange = (e) => {
     const value = e.target.value.toUpperCase();
     if (value.length <= 5) {
@@ -9,7 +9,6 @@ const GuessInput = ({ currentGuess, setCurrentGuess, handleSubmit }) => {
     }
   };
 
-  // Handle Enter key press: submit guess if it's 5 letters
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && currentGuess.length === 5) {
       handleSubmit();

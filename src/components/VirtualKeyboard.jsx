@@ -20,14 +20,14 @@ const VirtualKeyboard = ({ letterStatus, currentGuess, setCurrentGuess, handleSu
     cursor: 'pointer',
     textAlign: 'center',
     padding: '5px',
-    boxSizing: 'border-box', // ✅ Prevents overflow
+    boxSizing: 'border-box', 
   };
 
-  // Special styling for Enter and Backspace
+  
   const specialKeyStyle = {
     ...keyStyle,
-    width: '80px', // ✅ Make Enter and Backspace wider
-    fontSize: '14px', // ✅ Reduce font size for better fit
+    width: '80px', 
+    fontSize: '14px', 
   };
 
   const getKeyColor = (key) => {
@@ -36,10 +36,10 @@ const VirtualKeyboard = ({ letterStatus, currentGuess, setCurrentGuess, handleSu
     }
     const status = letterStatus[key.toLowerCase()];
     switch (status) {
-      case 'g': return '#6ca965'; // Correct letter, correct position
-      case 'y': return '#c8b653'; // Correct letter, wrong position
-      case 'b': return '#787c7f'; // Letter not in word
-      default: return '#d3d6da';   // Default unguessed letter
+      case 'g': return '#6ca965'; 
+      case 'y': return '#c8b653'; 
+      case 'b': return '#787c7f'; 
+      default: return '#d3d6da';   
     }
   };
 

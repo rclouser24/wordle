@@ -16,8 +16,8 @@ const GuessGrid = ({ guesses, currentGuess }) => {
   const getColor = (result) => {
     switch (result) {
       case 'g': return { backgroundColor: '#6ca965', color: 'white' };
-      case 'y': return { backgroundColor: '#c8b653', color: 'white' }; // Darker yellow
-      case 'b': return { backgroundColor: '#787c7f', color: 'white' }; // Dark gray
+      case 'y': return { backgroundColor: '#c8b653', color: 'white' }; 
+      case 'b': return { backgroundColor: '#787c7f', color: 'white' };
       default: return { backgroundColor: 'white', color: 'black' };
     }
   };
@@ -28,19 +28,16 @@ const GuessGrid = ({ guesses, currentGuess }) => {
         <div key={rowIndex} style={{ display: 'flex', justifyContent: 'center' }}>
           {Array(5).fill(null).map((_, colIndex) => {
             if (rowIndex < guesses.length) {
-              // Submitted guess
               const guess = guesses[rowIndex];
               const letter = guess.word[colIndex].toUpperCase();
               const result = guess.result[colIndex];
               const style = { ...cellStyle, ...getColor(result) };
               return <div key={colIndex} style={style}>{letter}</div>;
             } else if (rowIndex === guesses.length) {
-              // Current guess
               const letter = colIndex < currentGuess.length ? currentGuess[colIndex].toUpperCase() : '';
               const style = { ...cellStyle, backgroundColor: letter ? '#e0e0e0' : 'white', color: 'black' };
               return <div key={colIndex} style={style}>{letter}</div>;
             } else {
-              // Future rows
               return <div key={colIndex} style={{ ...cellStyle, backgroundColor: 'white' }}></div>;
             }
           })}

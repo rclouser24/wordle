@@ -38,7 +38,6 @@ const WordleGame = () => {
     const newGuesses = [...guesses, { word: guess, result }];
     setGuesses(newGuesses);
 
-    // Update letterStatus
     const newLetterStatus = { ...letterStatus };
     for (let i = 0; i < 5; i++) {
       const letter = guess[i];
